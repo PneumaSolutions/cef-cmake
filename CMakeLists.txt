@@ -23,7 +23,7 @@ if(NOT CEF_CMAKE_OUTPUT_DIR)
     message(STATUS "CEF-CMake: CEF_CMAKE_OUTPUT_DIR was not specified. Defaulting to CMAKE_RUNTIME_OUTPUT_DIRECTORY: ${CEF_CMAKE_OUTPUT_DIR}")
 endif()
 
-if(MSVC)
+if(CMAKE_GENERATOR MATCHES "^Visual Studio")
     set(CEF_CMAKE_OUTPUT_DIR ${CEF_CMAKE_OUTPUT_DIR}/$<CONFIG>)
 endif()
 
